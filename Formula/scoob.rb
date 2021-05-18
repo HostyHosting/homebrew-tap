@@ -10,7 +10,7 @@ class Scoob < Formula
 
   if OS.mac?
     url "https://github.com/HostyHosting/scoob/releases/download/v0.2.1/scoob-x86_64-apple-darwin.zip"
-    sha256 "cd39f501a51dd3a0bc55e397aa6f5923715bb436b1ca762e0a79e35287871ace"
+    sha256 "2e346deccbe0462cd24ef71e9da00e13ab82b5fe787256015bff146af4ba52b1"
   end
 
   # TODO: Separate mac out when we have ARM builds:
@@ -21,11 +21,11 @@ class Scoob < Formula
 
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/HostyHosting/scoob/releases/download/v0.2.1/scoob-x86_64-unknown-linux-gnu.zip"
-    sha256 "d468dbba5e5b72926839a998bcbda0ec93006e18f9be51137e29c57e6eea979e"
+    sha256 "e32513874ddaa3e04c3cdb17f5778492dd5def342eb45d445fce9b20060928e4"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/HostyHosting/scoob/releases/download/v0.2.1/scoob-aarch64-unknown-linux-gnu.zip"
-    sha256 "8784644525f1dab8fe0cc51a334f909766a0a1ed55583eca67f00da541a9609c"
+    sha256 "634ae628dfb86ea4440324c9c068d1285953d0ff6bbbe8b9b5458925a3c1c2e2"
   end
 
   def install
