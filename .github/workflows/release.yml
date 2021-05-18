@@ -1,5 +1,7 @@
 name: Manual Release
 on:
+  repository_dispatch:
+    types: [release]
   workflow_dispatch:
     inputs:
       version:
@@ -25,7 +27,7 @@ jobs:
       - name: Generate Scoob Forumla
         run: node src/update-scoob.js
         env:
-          VERSION: ${{ github.event.inputs.version }}
+          VERSION: ${{ github.event.client_payload.version || github.event.inputs.version }}
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
