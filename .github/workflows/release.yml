@@ -1,0 +1,34 @@
+name: Manual Release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "The version that will be released"
+        required: true
+
+jobs:
+  run:
+    name: Create Homebrew Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate Scoob Forumla
+        run: node src/update-scoob.js
+        env:
+          VERSION: ${{ github.event.inputs.version }}
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: "Update Formula"
+          add: "*.rb"

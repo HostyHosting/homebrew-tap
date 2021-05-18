@@ -1,0 +1,24 @@
+{
+  "name": "homebrew-tap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HostyHosting/homebrew-tap.git"
+  },
+  "keywords": [],
+  "author": "Jordan Gensler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HostyHosting/homebrew-tap/issues"
+  },
+  "homepage": "https://github.com/HostyHosting/homebrew-tap#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "handlebars": "^4.7.7"
+  }
+}

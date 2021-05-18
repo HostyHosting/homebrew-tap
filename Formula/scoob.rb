@@ -4,7 +4,7 @@
 class Scoob < Formula
   desc ""
   homepage "https://github.com/HostyHosting/scoob"
-  version "0.0.0"
+  version "0.2.1"
   license "MIT"
   bottle :unneeded
 
