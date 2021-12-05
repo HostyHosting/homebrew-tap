@@ -6,7 +6,6 @@ class Scoob < Formula
   homepage "https://github.com/HostyHosting/scoob"
   version "{{ VERSION }}"
   license "MIT"
-  bottle :unneeded
 
   if OS.mac?
     url "{{ MAC_URL }}"
