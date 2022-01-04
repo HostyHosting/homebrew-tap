@@ -7,16 +7,15 @@ class Scoob < Formula
   version "{{ VERSION }}"
   license "MIT"
 
-  if OS.mac?
+  if OS.mac? && Hardware::CPU.intel?
     url "{{ MAC_URL }}"
     sha256 "{{ MAC_SHA }}"
   end
 
-  # TODO: Separate mac out when we have ARM builds:
-  # if OS.mac? && Hardware::CPU.intel?
-  # end
-  # if OS.mac? && Hardware::CPU.arm?
-  # end
+  if OS.mac? && Hardware::CPU.arm?
+    url "{{ MAC_URL_ARM }}"
+    sha256 "{{ MAC_SHA_ARM }}"
+  end
 
   if OS.linux? && Hardware::CPU.intel?
     url "{{ LINUX_URL }}"

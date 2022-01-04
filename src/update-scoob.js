@@ -38,10 +38,12 @@ function getChecksum(url) {
 
 (async () => {
   const MAC_URL = `https://github.com/HostyHosting/scoob/releases/download/${VERSION}/scoob-x86_64-apple-darwin.zip`;
+  const MAC_URL_ARM = `https://github.com/HostyHosting/scoob/releases/download/${VERSION}/scoob-aarch64-apple-darwin.zip`;
   const LINUX_URL = `https://github.com/HostyHosting/scoob/releases/download/${VERSION}/scoob-x86_64-unknown-linux-gnu.zip`;
   const LINUX_URL_ARM = `https://github.com/HostyHosting/scoob/releases/download/${VERSION}/scoob-aarch64-unknown-linux-gnu.zip`;
 
   const MAC_SHA = await getChecksum(MAC_URL);
+  const MAC_SHA_ARM = await getChecksum(MAC_URL_ARM);
   const LINUX_SHA = await getChecksum(LINUX_URL);
   const LINUX_SHA_ARM = await getChecksum(LINUX_URL_ARM);
 
@@ -52,6 +54,8 @@ function getChecksum(url) {
       VERSION: VERSION.slice(1),
       MAC_URL,
       MAC_SHA,
+      MAC_URL_ARM,
+      MAC_SHA_ARM,
       LINUX_URL,
       LINUX_SHA,
       LINUX_URL_ARM,
