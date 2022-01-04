@@ -7,16 +7,15 @@ class Scoob < Formula
   version "0.6.5"
   license "MIT"
 
-  if OS.mac?
+  if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/HostyHosting/scoob/releases/download/v0.6.5/scoob-x86_64-apple-darwin.zip"
     sha256 "578e585d31c1254343814be9a02ae5baf7020f095f00902a7bc4d77eac289655"
   end
 
-  # TODO: Separate mac out when we have ARM builds:
-  # if OS.mac? && Hardware::CPU.intel?
-  # end
-  # if OS.mac? && Hardware::CPU.arm?
-  # end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/HostyHosting/scoob/releases/download/v0.6.5/scoob-aarch64-apple-darwin.zip"
+    sha256 "d62909400c4b359f0c7bcc0b18d0b0e468bf828110843cb999a687c50c1b0d3b"
+  end
 
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/HostyHosting/scoob/releases/download/v0.6.5/scoob-x86_64-unknown-linux-gnu.zip"
